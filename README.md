@@ -1,5 +1,5 @@
 # translator_edube_courses
-Python script for translate edube courses. Standard translator extensions not work on edube. You can use that programm. You can see both the original and the translated text at the same time.
+Python script for translate edube courses on any language. Standard translator extensions not work on edube. You can use that programm. You can see both the original and the translated text at the same time.
 ![Script work example](https://i.imgur.com/Ei76a1p.png)
 Installation: 
 1. Install Google Chrome.
