@@ -20,7 +20,12 @@ def translate_list(list_txt):
     translator = Translator(to_lang="ru", provider="mymemory", email=email_list[t_num])  # replace language if you need
     print('Index acc now:', t_num)
     for i in list_txt:
-        trans = translator.translate(i)
+        while (True):
+            try:
+                trans = translator.translate(i)
+                break
+            except Exception:
+                print('Error on server translate')
         while 'MYMEMORY WARNING' in trans:
             print(trans)
             print('MyMemory acc sleep')
@@ -29,10 +34,12 @@ def translate_list(list_txt):
                 t_num += 1
                 translator = Translator(to_lang="ru", provider="mymemory",
                                         email=email_list[t_num])  # replace language if you need
-                try:
-                    trans = translator.translate(i)
-                except Exception:
-                    print('Error on server translate')
+                while (True):
+                    try:
+                        trans = translator.translate(i)
+                        break
+                    except Exception:
+                        print('Error on server translate')
             else:
                 raise Exception("All your accounts have pause")
         res_list.append(trans)
